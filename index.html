@@ -1,149 +1,116 @@
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
+    <title>Calendar With Notes</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color: black;
+        }
 
-        <title>Calender For Time Fifth Time</title>
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            background-color: grey;
+            border: 3px solid white;
+            border-radius: 7px;
+            gap: 10px;
+            padding: 30px;
+        }
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        .calendar div {
+            text-align: center;
+            color: black;
+            font-size: 20px;
+            padding: 20px;
+            background-color: grey;
+            border: 3px solid black;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
 
-        <style>
+        .note {
+            margin-top: 8px;
+            font-size: 14px;
+            color: darkblue;
+            min-height: 20px;
+            outline: none;
+        }
 
-            body {
-                background-color: black;
+        .calendar div:hover {
+            cursor: pointer;
+            opacity: 0.6;
+            background-color: rgb(188, 183, 183);
+            transform: scale(1.08);
+            transition: transform 0.7s ease;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            .calendar div:hover {
+                opacity: 0.9;
+                transform: scale(1.05);
+                box-shadow: 0 6px 20px rgba(255,255,255,0.12);
             }
+        }
 
-            .calender {
-                display: grid;
-                grid-template-columns:  auto auto auto auto auto auto auto auto;
-                background-color: grey;
-                border: 3px solid rgb(255, 255, 255);
-                border-radius: 7px;
-                gap: 10px;
-                padding: 30px;
-            }
-
-            .calender div {
-                text-align: center;
-                color: black;
-                font-size: 20x;
-                padding: 40px;
-                background-color: grey;
-                border: 3px solid black;
-                border-radius: 5px;
-            }
-
-            .calender div:hover {
-                cursor: pointer;
-                opacity: 0.6;
-                background-color: rgb(188, 183, 183);
-                transform: scale(1.08);
-                transition: transform 0.7s ease;
-                 box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-            }
-
-             @media (hover: hover) and (pointer: fine) {
-      .calender div:hover {
-        cursor: pointer;
-        opacity: 0.9;
-        background-color: var(--card-dark);
-        transform: scale(1.05);
-        box-shadow: 0 6px 20px rgba(255,255,255,0.12);
-      }
-    }
-
-    /* responsive rules */
-    /* medium screens: show 4 columns */
-    @media (max-width: 900px) {
-      .calender {
-        grid-template-columns: repeat(4, 1fr);
-        padding: 18px;
-      }
-    }
-
-    /* small screens (phones): show 2 columns */
-    @media (max-width: 600px) {
-      .calender {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 12px;
-      }
-      .calender div {
-        padding: 14px;
-        font-size: 16px;
-      }
-    }
-
-    /* very small: single column stack */
-    @media (max-width: 380px) {
-      .calender {
-        grid-template-columns: 1fr;
-        padding: 10px;
-      }
-      .calender div {
-        padding: 12px;
-        font-size: 15px;
-      }
-    }
-
-    /* make any image scale to its cell */
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 6px;
-    }
-
-        </style>
-        </head>
-
+        @media (max-width: 900px) {
+            .calendar { grid-template-columns: repeat(4, 1fr); padding: 18px; }
+        }
+        @media (max-width: 600px) {
+            .calendar { grid-template-columns: repeat(2, 1fr); padding: 12px; }
+            .calendar div { font-size: 16px; padding: 14px; }
+        }
+        @media (max-width: 380px) {
+            .calendar { grid-template-columns: 1fr; padding: 10px; }
+            .calendar div { font-size: 15px; padding: 12px; }
+        }
+    </style>
+</head>
 <body>
-    <div class="calender">
+    <div class="calendar">
+        <!-- Header Row -->
+        <div><b>Weeks</b><div class="note" contenteditable="true"></div></div>
+        <div><b>Monday</b><div class="note" contenteditable="true"></div></div>
+        <div><b>Tuesday</b><div class="note" contenteditable="true"></div></div>
+        <div><b>Wednesday</b><div class="note" contenteditable="true"></div></div>
+        <div><b>Thursday</b><div class="note" contenteditable="true"></div></div>
+        <div><b>Friday</b><div class="note" contenteditable="true"></div></div>
+        <div><b>Saturday</b><div class="note" contenteditable="true"></div></div>
+        <div><b>Sunday</b><div class="note" contenteditable="true"></div></div>
 
-        <div><b>Weeks</b></div>
-        <div><b>Monday</b></div>
-        <div><b>Tuesday</b></div>
-        <div><b>Wednesday</b></div>
-        <div><b>Thursday</b></div>
-        <div><b>Friday</b></div>
-        <div><b>Saturday</b></div>
-        <div><b>Sunday</b></div>
+        <!-- Week 44 -->
+        <div><b>44</b><div class="note" contenteditable="true"></div></div>
+        <div><b>3</b><div class="note" contenteditable="true"></div></div>
+        <div><b>4</b><div class="note" contenteditable="true"></div></div>
+        <div><b>5</b><div class="note" contenteditable="true"></div></div>
+        <div><b>6</b><div class="note" contenteditable="true"></div></div>
+        <div><b>7</b><div class="note" contenteditable="true"></div></div>
+        <div><b>8</b><div class="note" contenteditable="true"></div></div>
+        <div><b>9</b><div class="note" contenteditable="true"></div></div>
 
-        <div><b>44</b></div>
-        <div><b>3</b></div>
-        <div><b>4</b></div>
-        <div><b>5</b></div>
-        <div><b>6</b></div>
-        <div><b>7</b></div>
-        <div><b>8</b></div>
-        <div><b>9</b></div>
+        <!-- Week 45 -->
+        <div><b>45</b><div class="note" contenteditable="true"></div></div>
+        <div><b>10</b><div class="note" contenteditable="true"></div></div>
+        <div><b>11</b><div class="note" contenteditable="true"></div></div>
+        <div><b>12</b><div class="note" contenteditable="true"></div></div>
+        <div><b>13</b><div class="note" contenteditable="true"></div></div>
+        <div><b>14</b><div class="note" contenteditable="true"></div></div>
+        <div><b>15</b><div class="note" contenteditable="true"></div></div>
+        <div><b>16</b><div class="note" contenteditable="true"></div></div>
 
-        <div><b>45</b></div>
-        <div><b>10</b></div>
-        <div><b>11</b></div>
-        <div><b>12</b></div>
-        <div><b>13</b></div>
-        <div><b>14</b></div>
-        <div><b>15</b></div>
-        <div><b>16</b></div>
-
-        <div><b>46</b></div>
-        <div><b>17</b></div>
-        <div><b>18</b></div>
-        <div><b>19</b></div>
-        <div><b>20</b></div>
-        <div><b>21</b></div>
-        <div><b>22</b></div>
-        <div><b>23</b></div>
-
+        <!-- Week 46 -->
+        <div><b>46</b><div class="note" contenteditable="true"></div></div>
+        <div><b>17</b><div class="note" contenteditable="true"></div></div>
+        <div><b>18</b><div class="note" contenteditable="true"></div></div>
+        <div><b>19</b><div class="note" contenteditable="true"></div></div>
+        <div><b>20</b><div class="note" contenteditable="true"></div></div>
+        <div><b>21</b><div class="note" contenteditable="true"></div></div>
+        <div><b>22</b><div class="note" contenteditable="true"></div></div>
+        <div><b>23</b><div class="note" contenteditable="true"></div></div>
     </div>
-
-    <script>
-
-alert('Press To Download 1000 Viruses On Your Computer.');
-
-    </script>
-
 </body>
-
-
 </html>
