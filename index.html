@@ -1,100 +1,125 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Borderless Calendar With Notes</title>
+    <title>Calendar For Time Fifth Time</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <style>
         body {
-            background-color: black;
+            background: linear-gradient(270deg, #000000, #1a1a1a, #000000);
+            background-size: 600% 600%;
+            animation: gradientBG 20s ease infinite;
+            font-family: Arial, sans-serif;
             margin: 0;
-            font-family: sans-serif;
+            padding: 20px;
         }
 
-        .calendar {
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        .calender {
             display: grid;
             grid-template-columns: repeat(8, 1fr);
+            background-color: grey;
+            border: 3px solid white;
+            border-radius: 7px;
             gap: 10px;
-            padding: 30px;
+            padding: 20px;
         }
 
-        .calendar div {
+        .calender div {
             text-align: center;
-            color: white;
-            font-size: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-        }
-
-        .note {
-            margin-top: 5px;
-            font-size: 14px;
-            color: #e0e0ff;
-            min-height: 20px;
-            outline: none;
-        }
-
-        .calendar div:hover {
+            color: black;
+            font-size: 18px;
+            padding: 30px;
+            background-color: lightgrey;
+            border: 2px solid black;
+            border-radius: 5px;
+            transition: all 0.3s ease;
             cursor: pointer;
+        }
+
+        .calender div:hover {
+            opacity: 0.8;
             transform: scale(1.05);
-            transition: transform 0.3s ease;
+            box-shadow: 0 0 15px rgba(255,255,255,0.3);
+        }
+
+        .today {
+            background-color: gold;
+            color: black;
+            font-weight: bold;
         }
 
         @media (max-width: 900px) {
-            .calendar { grid-template-columns: repeat(4, 1fr); padding: 18px; }
+            .calender { grid-template-columns: repeat(4, 1fr); }
         }
+
         @media (max-width: 600px) {
-            .calendar { grid-template-columns: repeat(2, 1fr); padding: 12px; }
-            .calendar div { font-size: 16px; }
+            .calender { grid-template-columns: repeat(2, 1fr); }
+            .calender div { padding: 14px; font-size: 16px; }
         }
+
         @media (max-width: 380px) {
-            .calendar { grid-template-columns: 1fr; padding: 10px; }
-            .calendar div { font-size: 15px; }
+            .calender { grid-template-columns: 1fr; }
+            .calender div { padding: 12px; font-size: 15px; }
         }
+
     </style>
 </head>
+
 <body>
-    <div class="calendar">
-        <!-- Header Row -->
-        <div><b>Weeks</b><div class="note" contenteditable="true"></div></div>
-        <div><b>Monday</b><div class="note" contenteditable="true"></div></div>
-        <div><b>Tuesday</b><div class="note" contenteditable="true"></div></div>
-        <div><b>Wednesday</b><div class="note" contenteditable="true"></div></div>
-        <div><b>Thursday</b><div class="note" contenteditable="true"></div></div>
-        <div><b>Friday</b><div class="note" contenteditable="true"></div></div>
-        <div><b>Saturday</b><div class="note" contenteditable="true"></div></div>
-        <div><b>Sunday</b><div class="note" contenteditable="true"></div></div>
+    <div class="calender">
+        <div><b>Weeks</b></div>
+        <div><b>Monday</b></div>
+        <div><b>Tuesday</b></div>
+        <div><b>Wednesday</b></div>
+        <div><b>Thursday</b></div>
+        <div><b>Friday</b></div>
+        <div><b>Saturday</b></div>
+        <div><b>Sunday</b></div>
 
-        <!-- Week 44 -->
-        <div><b>44</b><div class="note" contenteditable="true"></div></div>
-        <div><b>3</b><div class="note" contenteditable="true"></div></div>
-        <div><b>4</b><div class="note" contenteditable="true"></div></div>
-        <div><b>5</b><div class="note" contenteditable="true"></div></div>
-        <div><b>6</b><div class="note" contenteditable="true"></div></div>
-        <div><b>7</b><div class="note" contenteditable="true"></div></div>
-        <div><b>8</b><div class="note" contenteditable="true"></div></div>
-        <div><b>9</b><div class="note" contenteditable="true"></div></div>
+        <div><b>44</b></div>
+        <div contenteditable="true">3</div>
+        <div contenteditable="true">4</div>
+        <div contenteditable="true">5</div>
+        <div contenteditable="true">6</div>
+        <div contenteditable="true">7</div>
+        <div contenteditable="true">8</div>
+        <div contenteditable="true">9</div>
 
-        <!-- Week 45 -->
-        <div><b>45</b><div class="note" contenteditable="true"></div></div>
-        <div><b>10</b><div class="note" contenteditable="true"></div></div>
-        <div><b>11</b><div class="note" contenteditable="true"></div></div>
-        <div><b>12</b><div class="note" contenteditable="true"></div></div>
-        <div><b>13</b><div class="note" contenteditable="true"></div></div>
-        <div><b>14</b><div class="note" contenteditable="true"></div></div>
-        <div><b>15</b><div class="note" contenteditable="true"></div></div>
-        <div><b>16</b><div class="note" contenteditable="true"></div></div>
+        <div><b>45</b></div>
+        <div contenteditable="true">10</div>
+        <div contenteditable="true">11</div>
+        <div contenteditable="true">12</div>
+        <div contenteditable="true">13</div>
+        <div contenteditable="true">14</div>
+        <div contenteditable="true">15</div>
+        <div contenteditable="true">16</div>
 
-        <!-- Week 46 -->
-        <div><b>46</b><div class="note" contenteditable="true"></div></div>
-        <div><b>17</b><div class="note" contenteditable="true"></div></div>
-        <div><b>18</b><div class="note" contenteditable="true"></div></div>
-        <div><b>19</b><div class="note" contenteditable="true"></div></div>
-        <div><b>20</b><div class="note" contenteditable="true"></div></div>
-        <div><b>21</b><div class="note" contenteditable="true"></div></div>
-        <div><b>22</b><div class="note" contenteditable="true"></div></div>
-        <div><b>23</b><div class="note" contenteditable="true"></div></div>
+        <div><b>46</b></div>
+        <div contenteditable="true">17</div>
+        <div contenteditable="true">18</div>
+        <div contenteditable="true">19</div>
+        <div contenteditable="true">20</div>
+        <div contenteditable="true">21</div>
+        <div contenteditable="true">22</div>
+        <div contenteditable="true">23</div>
     </div>
+
+    <script>
+        // Highlight today's date automatically
+        const today = new Date().getDate();
+        const cells = document.querySelectorAll('.calender div');
+        cells.forEach(cell => {
+            if (!isNaN(cell.textContent) && parseInt(cell.textContent) === today) {
+                cell.classList.add('today');
+            }
+        });
+    </script>
 </body>
 </html>
