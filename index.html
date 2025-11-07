@@ -15,7 +15,7 @@
 
             .calender {
                 display: grid;
-                grid-template-columns:  auto auto auto auto auto auto auto auto;
+                grid-template-columns:  repeat(8, 1fr);
                 background-color: grey;
                 border: 3px solid rgb(255, 255, 255);
                 border-radius: 7px;
@@ -77,7 +77,7 @@
     /* very small: single column stack */
     @media (max-width: 380px) {
       .calender {
-        grid-template-columns: 1fr;
+        grid-coloumn: span 8;
         padding: 10px;
       }
       .calender div {
@@ -148,6 +148,7 @@ alert('Press To Download 1000 Viruses On Your Computer.');
 
 
 </html>
+
 
 
 
